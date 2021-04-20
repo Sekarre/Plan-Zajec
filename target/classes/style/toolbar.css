@@ -1,0 +1,346 @@
+
+/*Glowne panele */
+.StackPane {
+    -fx-background-color: #1d1d1d;
+}
+
+.background{
+    background_color: #1d1d1d;
+}
+
+.menuLabel, .infoLabel {
+    text_color: white;
+    -fx-text-fill: white;
+}
+
+
+.header{
+    -fx-text-fill: white;
+}
+
+.item-title{
+    -fx-text-fill: white;
+    -fx-opacity: 0.6;
+}
+
+
+.menu-button,
+.choice-box,
+.combo-box-base,
+.split-menu-button {
+    arrow_color: white;
+}
+
+
+
+.text-field{
+    -fx-text-box-border: black ;
+    -fx-border-width: 1;
+    -fx-text-fill: white;
+}
+
+
+.tooltip {
+    tooltip_background_color: #2b2b2b;
+    border_color: #767676;
+    text_color: white;
+}
+
+
+
+.tool-bar {
+    background_color: #252526;
+    button_hover_color: #444;
+    button_pressed_color: #333333;
+}
+
+
+
+.scroll-bar {
+    thumb_color: #52565a;
+    thumb_hover_color: #7d8183;
+    thumb_pressed_color: #a9abad;
+
+    track_color: #29292a;
+
+    inc_dec_button_color: #2a2d30;
+    inc_dec_button_hover_color: #3c4145;
+    inc_dec_button_pressed_color: #a8abac;
+
+    arrow_color: white;
+    arrow_pressed_color: #111;
+}
+
+.scroll-pane {
+    corner_background_color: #29292a;
+}
+
+
+.text-input {
+    border_color: #666;
+    border_hover_color: #999;
+    border_disabled_color: #333;
+
+    text_input_background_color: #111;
+    background_focused_color: #fff;
+    background_hover_color: #111;
+    background_disabled_color: #111;
+
+    text_color: white;
+    text_focused_color: #111;
+    text_disabled_color: #333;
+    prompt_text_color: #777;
+
+    highlight_color: accent_color;
+    highlighted_text_color: white;
+
+    graphic_color: #747474;
+}
+
+
+
+.menu-button {
+    menu_button_background_color: #333;
+    menu_button_text_color: white;
+    menu_border_hover_color: #858585;
+    menu_button_pressed_color: #666;
+}
+
+
+.progress-bar {
+    progress_background_color: #333;
+}
+
+
+.spinner {
+    spinner_background_color: #4a4a4a;
+
+    arrow_button_hover_color: #3c4145;
+    arrow_button_pressed_color: #a8abac;
+
+    arrow_color: #999;
+    arrow_pressed_color: #5e6060;
+}
+
+
+.list-view {
+    text_color: white;
+
+    list_view_background_color: #333;
+    border_color: #171717;
+}
+
+
+
+.context-menu {
+    menu_background_color: #2b2b2b;
+    context_menu_border_color: #777677;
+
+    separator_color: #555555;
+}
+
+
+
+.menu-bar {
+    menu_bar_background_color: #111;
+
+    text_color: white;
+
+    menu_button_hover_color: #404040;
+}
+
+.menu-item {
+    text_color: white;
+
+    menu_background_color: #2b2b2b;
+
+    graphic_color: #aaaaaa;
+
+    hover_color: #404040;
+    pressed_color: #555555;
+}
+
+
+.titled-pane {
+    text_color: white;
+
+    title_background_color: #1f1f1f;
+    title_background_hover_color: #4a4a4a;
+
+    border_color: #494949;
+
+    arrow_color: white;
+
+    content_background_color: #111;
+}
+
+
+.progress-indicator {
+    text_color: white;
+}
+
+
+.separator *.line {
+    -fx-border-style: solid;
+    -fx-border-width: 0.8px;
+    -fx-background-color: rgba(34, 34, 34, 0.96);
+
+}
+
+
+.split-menu-button {
+    button_background_color: #333333;
+    background_pressed_color: #666666;
+
+    border_hover_color: #858585;
+
+    text_color: white;
+
+    focus_ring_border_color: white;
+}
+
+
+/*Przyciski menu*/
+
+.buttonPanel {
+    -fx-background-color: #1d1d1d;
+}
+
+.buttonPanel:hover {
+    -fx-background-color: #131313;
+
+}
+
+.buttonPanel:pressed {
+    -fx-background-color: #45494a;
+}
+
+.mainPanel {
+    -fx-background-color: #3c3f41;
+
+}
+
+.split-pane {
+    background_color: #333;
+    border_color: #252525;
+}
+
+
+
+/*Tabela*/
+
+/*Light theme*/
+.table-view {
+    -fx-base: white;
+    -fx-background-color: white;
+    -fx-control-inner-background: white;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 5;
+}
+
+
+.table-row-cell, .tree-table-row-cell {
+    -fx-cell-size: 45pt;
+    -fx-font-size: 12pt ;
+    -fx-text-alignment: CENTER;
+}
+
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 35;
+    -fx-border-width: 0 0 1 0;
+    -fx-alignment: CENTER;
+
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 20;
+    -fx-font-family: "Segoe UI Light";
+    -fx-opacity: 1;
+}
+
+.table-view:focused .table-row-cell:focused {
+    -fx-border-color: derive(-fx-base, 20%);
+    -fx-background-insets: 0 0 0 0;
+    -fx-table-cell-border-color: transparent;
+}
+
+.table-view:focused .table-row-cell:selected {
+    -fx-background-insets: 0 0 0 0;
+}
+
+.table-column {
+    -fx-alignment: CENTER;
+}
+
+
+/*TimePicker*/
+
+/*Podswietlenie wybranej godziny*/
+.label {
+    text_color: white;
+}
+
+
+.jfx-time-picker {
+    -jfx-default-color: #009688;
+}
+
+.jfx-time-picker:editable .time-picker-display-node {
+    -fx-font-size: 14px;
+}
+
+
+.date-picker-popup > *{
+    -fx-background-color: #1d1d1d;
+}
+
+.date-picker-popup > * > .spinner {
+    -fx-background-color: transparent;
+}
+
+.jfx-time-picker-display-node {
+    -fx-background-color: white;
+}
+
+.time-picker-display-node {
+    -fx-alignment: CENTER;
+}
+
+.jfx-svg-glyph {
+    -fx-cursor: hand;
+}
+
+/*JFXButton*/
+
+.jfx-button{
+    -fx-cursor: hand;
+}
+
+
+/*JFX ProgressBar*/
+
+/*Kolor Tła*/
+.jfx-progress-bar>*.track{
+    -fx-background-color: #2B2B2B;
+
+}
+
+/*Kolor paska progresu*/
+.jfx-progress-bar:indeterminate > .bar {
+    -fx-background-color: #FFFFFF;
+}
+
+
+.search {
+    -fx-text-fill: black;
+}
+
+.placeholder {
+    -fx-font-size: 1.5em;
+}
+
+
+
+

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="planZajecPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="914.0" prefWidth="1323.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.planzajec.controllers.PlanZajecController">
+   <children>
+      <JFXListView fx:id="col_pon" layoutX="225.0" layoutY="120.0" prefHeight="794.0" prefWidth="219.0" stylesheets="@../../style/scroll.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="225.0" AnchorPane.topAnchor="120.0" />
+      <JFXListView fx:id="col_wt" layoutX="444.0" layoutY="120.0" prefHeight="794.0" prefWidth="219.0" stylesheets="@../../style/scroll.css" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="120.0" />
+      <JFXListView fx:id="col_sr" layoutX="663.0" layoutY="120.0" prefHeight="794.0" prefWidth="219.0" stylesheets="@../../style/scroll.css" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="120.0" />
+      <JFXListView fx:id="col_czw" layoutX="882.0" layoutY="120.0" prefHeight="794.0" prefWidth="219.0" stylesheets="@../../style/scroll.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="882.0" AnchorPane.topAnchor="120.0" />
+      <JFXListView fx:id="col_pt" layoutX="1101.0" layoutY="120.0" prefHeight="794.0" prefWidth="219.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="120.0" />
+      <JFXListView fx:id="col_czas" layoutX="54.0" layoutY="47.0" prefHeight="794.0" prefWidth="171.0" stylesheets="@../../style/scroll.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="54.0" AnchorPane.topAnchor="120.0" />
+      <JFXListView fx:id="col_numer" layoutY="47.0" prefHeight="772.0" prefWidth="54.0" stylesheets="@../../style/scroll.css" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="120.0" />
+      <Label id="customLabel" fx:id="tytulLabel" alignment="CENTER" layoutY="2.0" prefHeight="56.0" prefWidth="1315.0" stylesheets="@../../style/popupMenuItem.css" text="Klasa " textFill="#221f1f" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="3.0">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Label>
+      <JFXListView fx:id="col_dzien" layoutX="225.0" layoutY="57.0" orientation="HORIZONTAL" prefHeight="62.0" prefWidth="1091.0" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="3.0" />
+      <JFXButton fx:id="generujPdf" buttonType="RAISED" layoutX="1190.0" layoutY="7.0" onAction="#generujPdfOnAction" prefHeight="47.0" prefWidth="126.0" style="-fx-background-color: green; -fx-text-fill: white" text="Generuj pdf" AnchorPane.rightAnchor="7.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <Label id="customLabel" alignment="CENTER" layoutY="57.0" prefHeight="62.0" prefWidth="54.0" stylesheets="@../../style/popupMenuItem.css" text="Lp.">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label id="customLabel" alignment="CENTER" layoutX="54.0" layoutY="57.0" prefHeight="62.0" prefWidth="171.0" stylesheets="@../../style/popupMenuItem.css" text="Godzina:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="wyczyscPlan" buttonType="RAISED" layoutX="1029.0" layoutY="6.0" onAction="#wyczyscPlanOnAction" prefHeight="47.0" prefWidth="126.0" style="-fx-background-color: #cc0606; -fx-text-fill: white;" text="Wyczyść plan" AnchorPane.rightAnchor="190.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

@@ -1,0 +1,169 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema testPlan
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema testPlan
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `testPlan` DEFAULT CHARACTER SET utf8 ;
+USE `testPlan` ;
+
+-- -----------------------------------------------------
+-- Table `testPlan`.`Nauczyciel`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `testPlan`.`Nauczyciel` (
+  `idNauczyciel` INT NOT NULL AUTO_INCREMENT,
+  `rola` ENUM('Nauczyciel', 'Dyrektor', 'Wicedyrektor', 'Wychowawca') NULL,
+  `imie` VARCHAR(45) NOT NULL,
+  `nazwisko` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idNauczyciel`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `testPlan`.`Klasa`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `testPlan`.`Klasa` (
+  `idKlasa` INT NOT NULL AUTO_INCREMENT,
+  `nazwa` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idKlasa`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `testPlan`.`Przedmiot`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `testPlan`.`Przedmiot` (
+  `idPrzedmiot` INT NOT NULL AUTO_INCREMENT,
+  `nazwa` VARCHAR(45) NULL,
+  PRIMARY KEY (`idPrzedmiot`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `testPlan`.`Przedmiot_has_Nauczyciel`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `testPlan`.`Przedmiot_has_Nauczyciel` (
+  `Przedmiot_idPrzedmiot` INT NOT NULL,
+  `Nauczyciel_idNauczyciel` INT NOT NULL,
+  PRIMARY KEY (`Przedmiot_idPrzedmiot`, `Nauczyciel_idNauczyciel`),
+  INDEX `fk_Przedmiot_has_Nauczyciel_Nauczyciel1_idx` (`Nauczyciel_idNauczyciel` ASC) ,
+  INDEX `fk_Przedmiot_has_Nauczyciel_Przedmiot1_idx` (`Przedmiot_idPrzedmiot` ASC) ,
+  CONSTRAINT `fk_Przedmiot_has_Nauczyciel_Przedmiot1`
+    FOREIGN KEY (`Przedmiot_idPrzedmiot`)
+    REFERENCES `testPlan`.`Przedmiot` (`idPrzedmiot`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Przedmiot_has_Nauczyciel_Nauczyciel1`
+    FOREIGN KEY (`Nauczyciel_idNauczyciel`)
+    REFERENCES `testPlan`.`Nauczyciel` (`idNauczyciel`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `testPlan`.`czasTrwaniaLekcji`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `testPlan`.`czasTrwaniaLekcji` (
+  `idczasTrwaniaLekcji` INT NOT NULL AUTO_INCREMENT,
+  `numer` INT NULL,
+  `czasRozpoczecia` TIME NULL,
+  `czasZakonczenia` TIME NULL,
+  PRIMARY KEY (`idczasTrwaniaLekcji`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `testPlan`.`dzien`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `testPlan`.`dzien` (
+  `iddzien` INT NOT NULL AUTO_INCREMENT,
+  `nazwa` VARCHAR(45) NULL,
+  `numer` INT NULL,
+  PRIMARY KEY (`iddzien`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `testPlan`.`Sala`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `testPlan`.`Sala` (
+  `idSala` INT NOT NULL AUTO_INCREMENT,
+  `numer` VARCHAR(45) NOT NULL,
+  `nazwa` VARCHAR(45) NULL,
+  PRIMARY KEY (`idSala`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `testPlan`.`Klasa`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `testPlan`.`Klasa` (
+  `idKlasa` INT NOT NULL AUTO_INCREMENT,
+  `nazwa` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idKlasa`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `testPlan`.`GodzinaLekcyjna`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `testPlan`.`GodzinaLekcyjna` (
+  `idGodzinaLekcyjna` INT NOT NULL AUTO_INCREMENT,
+  `dzien_iddzien` INT NOT NULL,
+  `czasTrwaniaLekcji_idczasTrwaniaLekcji` INT NOT NULL,
+  `Przedmiot_idPrzedmiot` INT NOT NULL,
+  `Nauczyciel_idNauczyciel` INT NOT NULL,
+  `Sala_idSala` INT NOT NULL,
+  `Opis` VARCHAR(45) NULL,
+  `Klasa_idKlasa` INT NOT NULL,
+  PRIMARY KEY (`idGodzinaLekcyjna`),
+  INDEX `fk_GodzinaLekcyjna_dzien1_idx` (`dzien_iddzien` ASC) ,
+  INDEX `fk_GodzinaLekcyjna_czasTrwaniaLekcji1_idx` (`czasTrwaniaLekcji_idczasTrwaniaLekcji` ASC) ,
+  INDEX `fk_GodzinaLekcyjna_Przedmiot1_idx` (`Przedmiot_idPrzedmiot` ASC),
+  INDEX `fk_GodzinaLekcyjna_Nauczyciel1_idx` (`Nauczyciel_idNauczyciel` ASC),
+  INDEX `fk_GodzinaLekcyjna_Sala1_idx` (`Sala_idSala` ASC) ,
+  INDEX `fk_GodzinaLekcyjna_Klasa1_idx` (`Klasa_idKlasa` ASC) ,
+  CONSTRAINT `fk_GodzinaLekcyjna_dzien1`
+    FOREIGN KEY (`dzien_iddzien`)
+    REFERENCES `testPlan`.`dzien` (`iddzien`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_GodzinaLekcyjna_czasTrwaniaLekcji1`
+    FOREIGN KEY (`czasTrwaniaLekcji_idczasTrwaniaLekcji`)
+    REFERENCES `testPlan`.`czasTrwaniaLekcji` (`idczasTrwaniaLekcji`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_GodzinaLekcyjna_Przedmiot1`
+    FOREIGN KEY (`Przedmiot_idPrzedmiot`)
+    REFERENCES `testPlan`.`Przedmiot` (`idPrzedmiot`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_GodzinaLekcyjna_Nauczyciel1`
+    FOREIGN KEY (`Nauczyciel_idNauczyciel`)
+    REFERENCES `testPlan`.`Nauczyciel` (`idNauczyciel`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_GodzinaLekcyjna_Sala1`
+    FOREIGN KEY (`Sala_idSala`)
+    REFERENCES `testPlan`.`Sala` (`idSala`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_GodzinaLekcyjna_Klasa1`
+    FOREIGN KEY (`Klasa_idKlasa`)
+    REFERENCES `testPlan`.`Klasa` (`idKlasa`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

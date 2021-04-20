@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="789.0" prefWidth="823.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.planzajec.controllers.TabelkaKlasaPlanZajecController">
+   <children>
+      <TableView fx:id="table" onKeyPressed="#tableOnKeyPressed" onMouseClicked="#tableOnMouseClicked" prefHeight="789.0" prefWidth="823.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+          <placeholder>
+              <Label text="Nie znaleziono klas. "/>
+          </placeholder>
+          <columns>
+          <TableColumn fx:id="col_lp" prefWidth="103.0" resizable="false" text="Lp." />
+          <TableColumn fx:id="col_klasa" prefWidth="1000.0" resizable="false" text="Klasa" />
+        </columns>
+      </TableView>
+      <JFXTextField fx:id="szukajTextField" layoutX="669.0" layoutY="5.0" prefHeight="30.0" prefWidth="132.0" styleClass="search" stylesheets="@../../style/toolbar.css" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="5.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="622.0" layoutY="7.0" prefHeight="25.0" prefWidth="43.0" text="Szukaj:" AnchorPane.rightAnchor="158.0" AnchorPane.topAnchor="7.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

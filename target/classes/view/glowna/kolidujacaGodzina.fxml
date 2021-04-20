@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="300.0" spacing="2.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.planzajec.controllers.KolidujacaGodzinaController">
+   <children>
+      <Label alignment="CENTER" prefHeight="69.0" prefWidth="618.0" text="Kolidująca godzina: ">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <Label fx:id="dzienLabel" alignment="CENTER" prefHeight="69.0" prefWidth="618.0" text="Dzień: ">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="godzinaLabel" alignment="CENTER" prefHeight="69.0" prefWidth="618.0" text="Godzina: ">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="klasaLabel" alignment="CENTER" prefHeight="69.0" prefWidth="618.0" text="Klasa: ">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="nauczycielLabel" alignment="CENTER" prefHeight="69.0" prefWidth="618.0" text="Nauczyciel: ">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="przedmiotLabel" alignment="CENTER" prefHeight="69.0" prefWidth="618.0" text="Przedmiot: ">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="salaLabel" alignment="CENTER" prefHeight="69.0" prefWidth="618.0" text="Sala: ">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+   </children>
+</VBox>

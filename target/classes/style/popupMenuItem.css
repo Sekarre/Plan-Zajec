@@ -1,0 +1,36 @@
+.menu-item:focused {
+    -fx-accent: transparent;
+    -fx-selection-bar: transparent;
+}
+
+.menu-item:focused .label {
+    -fx-text-fill: -fx-text-base-color;
+}
+.menu-button {
+    -fx-background-insets: 1 0 -1 0, 0;
+    -fx-background-color: transparent;
+}
+
+.menu-button:hover  {
+    -fx-background-insets: 1 0 -1 0, 0;
+    -fx-background-color: #c1c1c1;
+}
+
+.menu-button:openvertically {
+    -fx-border-color: black;
+
+}
+
+.combo-box {
+    -fx-font-size : 16px;
+}
+
+
+.menu-button:openvertically .arrow-button .arrow{
+    visibility: false;
+}
+
+#customLabel {
+    -fx-background-color: white;
+    -fx-border-color: #bfbfbf;
+}

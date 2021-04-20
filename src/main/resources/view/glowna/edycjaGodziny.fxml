@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="edycjaPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#onEscPressed" prefHeight="578.0" prefWidth="709.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.planzajec.controllers.EdycjaGodzinyController">
+   <children>
+      <Label layoutX="148.0" layoutY="233.0" prefHeight="28.0" prefWidth="116.0" text="Nauczyciel: ">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="148.0" layoutY="296.0" prefHeight="30.0" prefWidth="116.0" text="Przedmiot: ">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="206.0" layoutY="360.0" prefHeight="30.0" prefWidth="52.0" text="Sala:  ">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="181.0" layoutY="28.0" prefHeight="37.0" prefWidth="64.0" text="Dzien: ">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="dzienTextField" disable="true" layoutX="276.0" layoutY="28.0" prefHeight="37.0" prefWidth="233.0">
+         <font>
+            <Font size="17.0" />
+         </font></JFXTextField>
+      <Label layoutX="167.0" layoutY="91.0" prefHeight="37.0" prefWidth="78.0" text="Godzina:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="godzinaTextField" disable="true" layoutX="276.0" layoutY="91.0" prefHeight="37.0" prefWidth="233.0">
+         <font>
+            <Font size="17.0" />
+         </font></JFXTextField>
+      <JFXButton fx:id="zapiszGodzineButton" layoutX="122.0" layoutY="441.0" onAction="#zapiszGodzineButtonOnAction" prefHeight="75.0" prefWidth="131.0" style="-fx-border-color: black" text="Zapisz">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="cofnijButton" layoutX="474.0" layoutY="441.0" onAction="#cofnijButtonOnAction" prefHeight="75.0" prefWidth="131.0" style="-fx-border-color: black" text="Powrót">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="usunGodzineButton" layoutX="301.0" layoutY="441.0" onAction="#usunGodzineButtonOnAction" prefHeight="75.0" prefWidth="131.0" style="-fx-border-color: black" text="Usuń">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="148.0" layoutY="173.0" prefHeight="28.0" prefWidth="116.0" text="Klasa:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="klasaJFXComboBox" layoutX="276.0" layoutY="169.0" onAction="#klasaJFXComboBoxOnAction" prefHeight="38.0" prefWidth="233.0" stylesheets="@../../style/popupMenuItem.css" />
+      <JFXComboBox fx:id="nauczycielJFXComboBox" layoutX="276.0" layoutY="233.0" onAction="#nauczycielJFXComboBoxOnAction" prefHeight="38.0" prefWidth="233.0" stylesheets="@../../style/popupMenuItem.css" />
+      <JFXComboBox fx:id="przedmiotJFXComboBox" layoutX="276.0" layoutY="292.0" prefHeight="38.0" prefWidth="233.0" stylesheets="@../../style/popupMenuItem.css" />
+      <JFXComboBox fx:id="salaJFXComboBox" layoutX="276.0" layoutY="356.0" onAction="#salaJFXComboBoxOnAction" prefHeight="38.0" prefWidth="233.0" stylesheets="@../../style/popupMenuItem.css" />
+      <Label fx:id="klasaIsOkLabel" layoutX="537.0" layoutY="173.0" prefHeight="38.0" prefWidth="38.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fx:id="klasaOkImage" fitHeight="38.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" />
+         </graphic>
+      </Label>
+      <Label fx:id="nauczycielIsOkLabel" layoutX="537.0" layoutY="237.0" prefHeight="38.0" prefWidth="30.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fx:id="nauczycielOkImage" fitHeight="38.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" />
+         </graphic>
+      </Label>
+      <Label fx:id="salaIsOkLabel" layoutX="537.0" layoutY="360.0" prefHeight="38.0" prefWidth="26.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fx:id="salaOkImage" fitHeight="38.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" />
+         </graphic>
+      </Label>
+      <MenuButton fx:id="klasaPopup" layoutX="631.0" layoutY="167.0" mnemonicParsing="false" popupSide="RIGHT" stylesheets="@../../style/popupMenuItem.css" visible="false">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../style/images/searchIcon.png" />
+               </image>
+            </ImageView>
+         </graphic></MenuButton>
+      <MenuButton fx:id="nauczycielPopup" layoutX="631.0" layoutY="237.0" mnemonicParsing="false" popupSide="RIGHT" stylesheets="@../../style/popupMenuItem.css" visible="false">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../style/images/searchIcon.png" />
+               </image>
+            </ImageView>
+         </graphic></MenuButton>
+      <MenuButton fx:id="salaPopup" layoutX="631.0" layoutY="359.0" mnemonicParsing="false" popupSide="RIGHT" stylesheets="@../../style/popupMenuItem.css" visible="false">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../style/images/searchIcon.png" />
+               </image>
+            </ImageView>
+         </graphic></MenuButton>
+      <BorderPane layoutY="556.0" prefHeight="25.0" prefWidth="709.0">
+         <left>
+            <Label fx:id="mainInfoLabel" alignment="CENTER" prefHeight="14.0" prefWidth="356.0" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>
